@@ -1,0 +1,24 @@
+{
+  "name": "opiner",
+  "version": "1.0.0",
+  "description": "A fullstack website where users can check into local bars. Created for FreeCodeCamp (https://www.freecodecamp.org/challenges/build-a-nightlife-coordination-app)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.0.12",
+    "express-session": "^1.15.6",
+    "passport": "^0.4.0",
+    "body-parser": "^1.18.2",
+    "pug": "^2.0.3",
+    "passport-twitter": "^1.0.4",
+    "request": "^2.85.0"
+  },
+  "engines": {
+    "node": "9.x"
+  },
+  "repository": {
+    "url": "https://github.com/Ashto10/Nightlife-Coordination-App"
+  }
+}

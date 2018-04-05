@@ -1,0 +1,25 @@
+extends layout
+
+block head
+  title Nightline | Home
+  
+append body
+  h2.profile-header #[=user.twitter.displayName]'s plans
+  .container
+    .row.plans-container
+        if user.barsGoingTo.length === 0
+          .plan.col-sm-10.offset-sm-1.col-md-6.offset-md-3.text-center
+            p What, no plans? Let's make some!
+            form(action="/search" method="GET").form-inline.justify-content-center
+              input(class="form-control" name="location" type="search" placeholder="City, State or Zip Code" aria-label="Search")
+              button(class="btn btn-primary" type="submit") Search
+        else
+          for bar in user.barsGoingTo
+            .plan.col-sm-12.col-md-5.offset-md-1.text-center
+              p planning to visit
+              p.name #[=bar.barName]
+              a(href="/guestList/remove/"+ bar.bar_id).btn.btn-danger Cancel Plan
+
+    
+block script
+  script( src="/controllers/userController.client.js" type="text/javascript")
