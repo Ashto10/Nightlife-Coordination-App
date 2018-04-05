@@ -1,0 +1,18 @@
+extends layout
+
+block head
+  title Nightline | Home
+  
+append body
+  .splash-container
+    a(href="https://commons.wikimedia.org/wiki/File:Bar_caf%C3%A9_d%27%C3%A9poque_group.jpg").attribution Photograph by Skivaly21
+    .splash
+      .splash-text
+        .tagline Meet Up, Get Down
+        .call Join today to see all the hot spots in town. See what places other users are hitting up tonight, and add youself to the guestlist to let everyone know you're coming.
+        a(href="/auth/twitter")
+          img(src="https://cdn.glitch.com/854bed4f-5ebe-43f7-a85e-3e9f30063361%2Fsign-in-with-twitter-gray%5B1%5D.png?1522553964899")
+
+    
+block script
+  script( src="/controllers/userController.client.js" type="text/javascript")

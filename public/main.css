@@ -1,0 +1,232 @@
+html, body {
+  min-height: 100%;
+  height: 100%; 
+  color: #1d131f;
+}
+
+body {
+  background: #7786a8;
+  padding-bottom: 80px;
+}
+
+.footer {
+  position: fixed;
+  height: 40px;
+  bottom: 0;
+  width: 100%;
+  background: #1d131f;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.footer span {
+  color: #f5f7f5;
+  line-height: 40px;
+  font-size: 0.9em;
+}
+
+.footer img {
+  float: right;
+  height: 40px;
+}
+
+.alert {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  max-width: 400px;
+}
+
+nav {
+  background: #324B7D !important;
+}
+
+.splash-container {
+  display: table;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  animation: colors 7s infinite alternate;
+}
+
+.attribution {
+  font-size: 0.8em;
+  right: 20px;
+  bottom: 40px;
+  position: absolute;
+  z-index: 100;
+  color: whitesmoke;
+}
+
+.splash {
+  position: relative;
+  z-index: 10;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.splash-text {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.splash-text .tagline {
+  font-size: 3em;
+}
+
+.splash-text .call {
+  padding: 1em 0 2.5em;
+}
+
+@keyframes colors {
+  0% {
+    background-color: blue;
+  }
+  
+  50% {
+    background-color: green;
+  }
+  
+  100% {
+    background-color: red;
+  }
+}
+
+.splash-container:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.glitch.com/f91ba5df-6bb6-465d-b8ac-de2dd837b265%2F1024px-Bar_caf%C3%A9_d'%C3%A9poque_group%5B1%5D.jpg?1522946892354");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+}
+
+.bar-container {
+  margin-top: 30px;
+}
+
+.bar-inner {
+  background: #f5f7f5;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.bar-inner:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.guest-info {
+  border-bottom: 1px solid #1d131f;
+  position: relative;
+  margin-bottom: 0.4em;
+}
+
+.guest-info a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white !important;
+}
+
+.bar-photo-container {
+  margin-top: 10px;
+}
+
+.bar-name {
+  display: block;
+  height: 2em;
+  margin-top: 0.6em;
+  font-weight: bold;
+  color: #ae425a;
+}
+
+.yelp-info {
+  width: 100%;
+}
+
+.rating-info,
+.bar-link {
+  display: block;
+  position: relative;
+  float: left;
+  height: 50px;
+  width: 50%;
+}
+
+.rating-info {
+  margin-top: 10px;
+}
+
+.bar-link {
+  text-align: right;
+}
+
+.yelp-info img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  margin: 0px;
+}
+
+.address {
+  margin-top: 1.5em;
+  height: 4.5em;
+}
+
+.address-line {
+  display: block;
+  height: 1em;
+  margin-top: 0.125em;
+}
+
+.offset-container {
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.profile-header {
+  margin-top: 1.3em;
+  text-align: center;
+  color: #1d131f;
+}
+
+.plans-container {
+  margin-top: 2em;
+}
+
+.plan {
+  background: #f5f7f5;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.plan p {
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.plan .name {
+  font-size: 1.5rem;
+  color: #ae425a;
+}
+
+.plan .btn {
+  margin-top: 20px;
+}

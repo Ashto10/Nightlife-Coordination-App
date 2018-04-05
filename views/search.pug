@@ -1,0 +1,46 @@
+extends layout
+
+block head
+  title Nightline | Don't look at this I'm testing how rude
+  
+append body
+  - function GetRatingURL(num) {
+  -   let star = Math.floor(num);
+  -   let half = num % 1 !== 0 ? "_half" : ""
+  -   return "https://cdn.glitch.com/f91ba5df-6bb6-465d-b8ac-de2dd837b265%2Fsmall_" +star + half + "%403x.png?1522795725006"
+  - }
+  .container
+    .row
+      each bar in barData.businesses
+        - var ratingLink = GetRatingURL(bar.rating);
+        .bar-container.col-sm-6.col-md-4
+          .bar-inner
+            .guest-info
+              p #[=bar.guests] #[= bar.guests === 1 ? 'person' : 'people'] going
+              if loggedIn
+                if bar.userAttending
+                  a(href="/guestList/remove/" + bar.id).btn.btn-danger.btn-sm I'm Out!
+                else
+                  a(href="/guestList/add/" + bar.name + "/" + bar.id).btn.btn-primary.btn-sm I'm In!
+            .bar-photo-container.embed-responsive.embed-responsive-4by3
+              img(src=bar.image_url).embed-responsive-item
+            span.bar-name= bar.name
+            .address
+              each line in bar.location.display_address
+                span.address-line= line
+            .yelp-info
+              .rating-info
+                img(src=ratingLink).rating-img
+                p.rating-count #[=bar.review_count] reviews
+              a(href=bar.url).bar-link
+                img(src="https://cdn.glitch.com/f91ba5df-6bb6-465d-b8ac-de2dd837b265%2FYelp_trademark_RGB_outline.png?1522859538526")
+    .offset-container.row
+      .offset-3.col-3
+        if (offset - 18 >= 0)
+          a(href="/search/"+ location +"/" + (offset - 18)).btn.btn-primary prev
+      .col-3
+        if (offset + 18 < 1000)
+          a(href="/search/"+ location +"/" + (offset + 18)).btn.btn-primary next
+    
+block script
+  script( src="/controllers/userController.client.js" type="text/javascript")
